@@ -16,8 +16,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ClickableObject.cpp" />
     <ClCompile Include="Model.cpp" />
-    <ClCompile Include="Model2.cpp" />
-    <ClCompile Include="Model3.cpp" />
+    <ClCompile Include="Model2D.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="RenderableEntity.cpp" />
     <ClCompile Include="RenderManager.cpp" />
@@ -33,8 +32,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ClickableObject.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="Model2.h" />
-    <ClInclude Include="Model3.h" />
+    <ClInclude Include="Model2D.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="RenderableEntity.h" />
     <ClInclude Include="RenderManager.h" />

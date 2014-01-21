@@ -1,7 +1,7 @@
 #include "RenderableEntity.h"
 
 
-RenderableEntity::RenderableEntity() {
+RenderableEntity::RenderableEntity(RenderType rType) : type(rType){
 }
 
 

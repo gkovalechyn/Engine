@@ -59,10 +59,7 @@
     <ClCompile Include="Button.cpp">
       <Filter>source\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="Model2.cpp">
-      <Filter>source\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="Model3.cpp">
+    <ClCompile Include="Model2D.cpp">
       <Filter>source\Render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,10 +101,7 @@
     <ClInclude Include="Button.h">
       <Filter>source\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="Model2.h">
-      <Filter>source\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="Model3.h">
+    <ClInclude Include="Model2D.h">
       <Filter>source\Render</Filter>
     </ClInclude>
   </ItemGroup>

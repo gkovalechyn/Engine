@@ -53,80 +53,80 @@ static void render() {
 
 
 void loadDefaultTexture() {
-	Bitmap bmp = Bitmap::bitmapFromFile("bitmap1.bmp");
-	bmp.flipVertically();
-	texture = new Texture(bmp, GL_NEAREST, GL_REPEAT);
+    Bitmap bmp = Bitmap::bitmapFromFile("bitmap1.bmp");
+    bmp.flipVertically();
+    texture = new Texture(bmp, GL_NEAREST, GL_REPEAT);
 }
 
 void loadModel() {
-	model = new Model();
+    model = new Model();
 
-	GLfloat vertexBufferData[] = {
-		//  X     Y     Z       U     V
-		// bottom
-		-1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
-		1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
-		-1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
-		1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
-		1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
-		-1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
+    GLfloat vertexBufferData[] = {
+        //  X     Y     Z       U     V
+        // bottom
+        -1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
+        1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
+        -1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
+        1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
+        -1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
 
-		// top
-		-1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
-		-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-		1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
-		1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
-		-1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-		1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+        // top
+        -1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
+        -1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
+        -1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
 
-		// front
-		-1.0f, -1.0f, 1.0f, 1.0f, 0.0f,
-		50.0f, -1.0f, 1.0f, 0.0f, 0.0f,
-		-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-		1.0f, -1.0f, 1.0f, 0.0f, 0.0f,
-		1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-		-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+        // front
+        -1.0f, -1.0f, 1.0f, 1.0f, 0.0f,
+        50.0f, -1.0f, 1.0f, 0.0f, 0.0f,
+        -1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, -1.0f, 1.0f, 0.0f, 0.0f,
+        1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+        -1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
 
-		// back
-		-1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
-		-1.0f, 1.0f, -1.0f, 0.0f, 1.0f,
-		1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
-		1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
-		-1.0f, 1.0f, -1.0f, 0.0f, 1.0f,
-		1.0f, 1.0f, -1.0f, 1.0f, 1.0f,
+        // back
+        -1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
+        -1.0f, 1.0f, -1.0f, 0.0f, 1.0f,
+        1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
+        1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
+        -1.0f, 1.0f, -1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, -1.0f, 1.0f, 1.0f,
 
-		// left
-		-1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
-		-1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
-		-1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
-		-1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
-		-1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-		-1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
+        // left
+        -1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
+        -1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
+        -1.0f, -1.0f, -1.0f, 0.0f, 0.0f,
+        -1.0f, -1.0f, 1.0f, 0.0f, 1.0f,
+        -1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+        -1.0f, 1.0f, -1.0f, 1.0f, 0.0f,
 
-		// right
-		1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
-		1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
-		1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
-		1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
-		1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
-		1.0f, 1.0f, 1.0f, 0.0f, 1.0f
-	};
+        // right
+        1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, -1.0f, -1.0f, 1.0f, 0.0f,
+        1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
+        1.0f, -1.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, 1.0f, -1.0f, 0.0f, 0.0f,
+        1.0f, 1.0f, 1.0f, 0.0f, 1.0f
+    };
 
-	model->setDrawStart(0);
-	model->setDrawCount(6*2*3);
-	model->setDrawType(GL_TRIANGLES);
-	model->setVertexBuffer(vertexBufferData, sizeof(vertexBufferData) / sizeof(GLfloat));
-	model->setShaders(shader);
-	model->setTexture(texture);
+    model->setDrawStart(0);
+    model->setDrawCount(6*2*3);
+    model->setDrawType(GL_TRIANGLES);
+    model->setVertexBuffer(vertexBufferData, sizeof(vertexBufferData) / sizeof(GLfloat));
+    model->setShaders(shader);
+    model->setTexture(texture);
 
-	model->init();
+    model->init();
 }
 
 void loadShaders(const char* vertFilename, const char* fragFilename) {
-	std::vector<Shader> shaders;
-	shaders.push_back(Shader::shaderFromFile(vertFilename, GL_VERTEX_SHADER));
-	shaders.push_back(Shader::shaderFromFile(fragFilename, GL_FRAGMENT_SHADER));
-	shader = new Program(shaders);
+    std::vector<Shader> shaders;
+    shaders.push_back(Shader::shaderFromFile(vertFilename, GL_VERTEX_SHADER));
+    shaders.push_back(Shader::shaderFromFile(fragFilename, GL_FRAGMENT_SHADER));
+    shader = new Program(shaders);
 }
 
 
@@ -141,16 +141,21 @@ void appMain() {
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
     glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
     glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
-    if (!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
-    { throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?"); }
+
+    if (!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 24, 0, GLFW_WINDOW)) {
+        throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
+    }
 
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
-    if (glewInit() != GLEW_OK)
-    { throw std::runtime_error("glewInit failed"); }
-	//enable depth buffering
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
+
+    if (glewInit() != GLEW_OK) {
+        throw std::runtime_error("glewInit failed");
+    }
+
+    //enable depth buffering
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
 
     // print out some info about the graphics drivers
     std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
@@ -159,13 +164,14 @@ void appMain() {
     std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 
     // make sure OpenGL version 3.2 API is available
-    if (!GLEW_VERSION_3_2)
-    { throw std::runtime_error("OpenGL 3.2 API is not available."); }
+    if (!GLEW_VERSION_3_2){
+		throw std::runtime_error("OpenGL 3.2 API is not available."); 
+	}
 
     //-- load default stuff
     loadDefaultTexture();
     loadShaders("VertexShader.txt","FragmentShader.txt");
-	//loadShaders("vertex-shader.txt","fragment-shader.txt");
+    //loadShaders("vertex-shader.txt","fragment-shader.txt");
     loadModel();
 
     // run while the window is open
@@ -189,7 +195,7 @@ int main(int argc, char *argv[]) {
         appMain();
     } catch (const std::exception& e) {
         std::cerr << "ERROR: " << e.what() << std::endl;
-		getchar();
+        getchar();
         return EXIT_FAILURE;
     }
 

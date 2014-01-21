@@ -23,6 +23,10 @@ public:
 	This function is called when the user clicks on this object.
 	*/
 	virtual void onClick() = 0;
+	/**
+	This function is called when the mouse hovers over this object.
+	*/
+	virtual void onHover() = 0;
 private:
 	//the size and position of this object on the screen
 	glm::vec2 size;

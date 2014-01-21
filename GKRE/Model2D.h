@@ -7,13 +7,21 @@
 
 #include "Texture.h"
 #include "Program.h"
-#include "Camera.h"
 
-class Model {
+/**
+Represents a 2D entity used for drawing on the screen, instead of the 3D model (Model.h)
+used for drawing 3D objects.
+*/
+class Model2D {
 public:
-    Model();
-    ~Model();
+	Model2D();
+	~Model2D();
 	void render();
+
+	// Sets the starting draw point of this model
+	void setDrawStart(GLint drawStart);
+	// Sets the amount of vertexes that should be drawn
+	void setDrawCount(GLint drawDount);
 
 	void setTexture(Texture* tex);
 
@@ -60,20 +68,5 @@ public:
 	GLint getDrawCount();
 	GLenum getDrawType();
 
-protected:
-    GLuint vao = 0;
-	GLuint vbo = 0;
-
-	Texture* texture = NULL;
-	Program* shader = NULL;
-
-	GLuint arrayLength = -1;
-
-	GLfloat* vertexBufferData = NULL;
-
-	GLenum drawType = GL_TRIANGLES;
-
-	GLint drawStart = 0;
-	GLint drawCount = 6;//1 square = 2 triangles = 6 vertices
 };
 
