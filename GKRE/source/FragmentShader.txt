@@ -1,0 +1,11 @@
+#version 330 core
+
+uniform sampler2D texture;
+
+in vec2 texCoordinates;
+
+out vec4 finalColor;
+
+void main(){
+	finalColor = texture(texture, texCoordinates);
+}

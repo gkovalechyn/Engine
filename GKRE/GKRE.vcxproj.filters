@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>
+      </Extensions>
+    </Filter>
+    <Filter Include="source\Render">
+      <UniqueIdentifier>{c4377382-6e7f-40f9-a4c5-6246bc0314c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Shaders">
+      <UniqueIdentifier>{247e6ce1-1b8e-4386-9512-aab6f0feb894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\API">
+      <UniqueIdentifier>{9f9fae60-dbc7-4a64-bfe7-d9a405f8ed79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\GUI">
+      <UniqueIdentifier>{d4233699-3b1f-4e75-8764-b4c3c9567321}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>source\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>source\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>source\API</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>source\API</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>source\API</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>source\API</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickableObject.cpp">
+      <Filter>source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderableEntity.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Model2.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Model3.cpp">
+      <Filter>source\Render</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bitmap.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Program.h">
+      <Filter>source\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>source\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>source\API</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>source\API</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowManager.h">
+      <Filter>source\API</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>source\API</Filter>
+    </ClInclude>
+    <ClInclude Include="ClickableObject.h">
+      <Filter>source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderableEntity.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>source\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Model2.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Model3.h">
+      <Filter>source\Render</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GKRE.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp" />
+    <Image Include="bitmap2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="VertexShader.txt">
+      <Filter>source\Shaders</Filter>
+    </Text>
+    <Text Include="FragmentShader.txt">
+      <Filter>source\Shaders</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

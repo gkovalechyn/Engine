@@ -1,0 +1,57 @@
+#Directories
+thirdparty/
+#Old testing folders
+_GL/
+_Project/
+_Source/
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.slo
+*.lo
+*.dylib
+*.lai
+*.la
+*.a
+*.obj
+#Large files#
+#############
+*.ipch
+*.pch
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.tlog
+*.sql
+*.sqlite
+*.sdf
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
