@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GL\glew.h>
+#include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <exception>
@@ -20,6 +20,10 @@ public:
 	void setVertexBuffer(GLfloat* buffer, GLuint vectorLength);
 
 	void setDrawType(GLenum drawType);
+
+	void setDrawStart(GLint drawStart);
+
+	void setDrawCount(GLint drawStart);
 
 	void setShaders(Program* shader);
 
@@ -73,7 +77,10 @@ protected:
 
 	GLenum drawType = GL_TRIANGLES;
 
-	GLint drawStart = 0;
-	GLint drawCount = 6;//1 square = 2 triangles = 6 vertices
+	GLint drawStart = -1;
+	GLint drawCount = -1;
+
+	glm::mat4 model;
+	Camera c;
 };
 

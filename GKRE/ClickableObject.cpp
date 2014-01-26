@@ -1,7 +1,8 @@
 #include "ClickableObject.h"
 
 
-ClickableObject::ClickableObject() {
+ClickableObject::ClickableObject() : RenderableEntity(THREE_D) {
+	
 }
 
 

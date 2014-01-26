@@ -7,6 +7,7 @@
 
 #include "Texture.h"
 #include "Program.h"
+#include "Camera.h"
 
 /**
 Represents a 2D entity used for drawing on the screen, instead of the 3D model (Model.h)

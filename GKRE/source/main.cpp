@@ -35,7 +35,9 @@ limitations under the License.
 // constants
 const glm::vec2 SCREEN_SIZE(800, 600);
 Texture* texture;
+Texture* oTexture;
 Model* model;
+Model* oModel;
 Program* shader;
 // draws a single frame
 static void render() {
@@ -47,6 +49,7 @@ static void render() {
 
     model->render();
 
+	oModel->render();
     // swap the display buffers (displays what was just drawn)
     glfwSwapBuffers();
 }
@@ -54,13 +57,18 @@ static void render() {
 
 void loadDefaultTexture() {
     Bitmap bmp = Bitmap::bitmapFromFile("bitmap1.bmp");
+	Bitmap bmp2 = Bitmap::bitmapFromFile("bitmap2.bmp");
+
     bmp.flipVertically();
+	bmp2.flipVertically();
+
     texture = new Texture(bmp, GL_NEAREST, GL_REPEAT);
+	oTexture = new Texture(bmp2, GL_NEAREST, GL_REPEAT);
 }
 
 void loadModel() {
     model = new Model();
-
+	oModel = new Model();
     GLfloat vertexBufferData[] = {
         //  X     Y     Z       U     V
         // bottom
@@ -119,7 +127,17 @@ void loadModel() {
     model->setShaders(shader);
     model->setTexture(texture);
 
+	oModel->setDrawStart(0);
+	oModel->setDrawCount(6 * 2 * 3);
+	oModel->setDrawType(GL_TRIANGLES);
+	oModel->setVertexBuffer(vertexBufferData, sizeof(vertexBufferData) / sizeof(GLfloat));
+	oModel->setShaders(shader);
+	oModel->setTexture(oTexture);
+
+	oModel->translate(glm::vec3(5, 3, 10));
+
     model->init();
+	oModel->init();
 }
 
 void loadShaders(const char* vertFilename, const char* fragFilename) {
@@ -184,8 +202,10 @@ void appMain() {
     glfwTerminate();
 
     delete texture;
+	delete oTexture;
     delete shader;
     delete model;
+	delete oModel;
 }
 
 

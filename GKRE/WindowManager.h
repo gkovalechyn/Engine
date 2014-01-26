@@ -1,9 +1,9 @@
 #pragma once
+//--OpenGl includes
+//#include <gl/glfw.h>
 //--Standart c++ includes
 #include <string>
 #include <map>
-//--OpenGl includes
-#include <gl\glfw.h>
 //--Project includes
 #include "Window.h"
 class WindowManager {

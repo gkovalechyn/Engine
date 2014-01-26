@@ -1,7 +1,7 @@
 #include "Window.h"
 
 
-Window::Window() {
+Window::Window(const GLuint _id) : id(_id) {
 }
 
 

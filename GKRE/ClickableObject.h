@@ -1,9 +1,6 @@
 #pragma once
 //--Standart includes
 #include <string>
-//-OpenGl includes
-#include <GL/glfw.h>
-#include <glm/glm.hpp>
 //--Project includes
 #include "RenderableEntity.h"
 
