@@ -19,7 +19,7 @@ limitations under the License.
 // third-party libraries
 #include <windows.h>
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW\glfw3.h>
 #include <glm/glm.hpp>
 
 // standard C++ libraries
@@ -39,19 +39,23 @@ Texture* oTexture;
 Model* model;
 Model* oModel;
 Program* shader;
+//Window handle
+GLFWwindow* handle = NULL;
 // draws a single frame
 static void render() {
     // clear everything
     glClearColor(0, 0, 0, 1); // black
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    //render the model
+    //render the models
 
     model->render();
 
 	oModel->render();
     // swap the display buffers (displays what was just drawn)
-    glfwSwapBuffers();
+    glfwSwapBuffers(handle);
+	//--Handle the events
+	glfwPollEvents();
 }
 
 
@@ -155,20 +159,33 @@ void appMain() {
     { throw std::runtime_error("glfwInit failed"); }
 
     // open a window with GLFW
-    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
-    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
-    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    if (!glfwOpenWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, 8, 8, 8, 8, 24, 0, GLFW_WINDOW)) {
-        throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
-    }
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+	
+	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	//--Set the bits
+	glfwWindowHint(GLFW_RED_BITS, 16);
+	glfwWindowHint(GLFW_GREEN_BITS, 16);
+	glfwWindowHint(GLFW_BLUE_BITS, 16);
 
+	glfwWindowHint(GLFW_ALPHA_BITS, 8);
+
+	glfwWindowHint(GLFW_DEPTH_BITS, 24);
+	
+	//width, height, title, monitor, resource sharing
+	handle = glfwCreateWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, "Test window", NULL, NULL);
+	if (handle == NULL) {
+		throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
+	}
+
+	glfwMakeContextCurrent(handle);
     // initialise GLEW
     glewExperimental = GL_TRUE; //stops glew crashing on OSX :-/
-
-    if (glewInit() != GLEW_OK) {
-        throw std::runtime_error("glewInit failed");
+	if (glewInit() != GLEW_OK) {
+		throw std::runtime_error("GLEW init falied!");
     }
 
     //enable depth buffering
@@ -193,7 +210,7 @@ void appMain() {
     loadModel();
 
     // run while the window is open
-    while (glfwGetWindowParam(GLFW_OPENED)) {
+    while (!glfwWindowShouldClose(handle)) {
         // draw one frame
         render();
     }

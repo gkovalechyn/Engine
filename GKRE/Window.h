@@ -2,7 +2,7 @@
 //--OpenGl includes
 #include <windows.h>
 #include <GL/glew.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 //--C++ includes
 #include <vector>
@@ -32,6 +32,7 @@ public:
     ~Window();
 
 private:
+	const GLFWwindow* handle;
 	std::vector<RenderableEntity*> toBeDrawn;
 	std::vector<ClickableObject*> clickables;
 

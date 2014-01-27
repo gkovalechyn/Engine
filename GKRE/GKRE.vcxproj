@@ -61,7 +61,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,8 +82,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)thirdparty\glew-1.9.0\include;$(ProjectDir)thirdparty\glfw-2.7.7\include;$(ProjectDir)\thirdparty\stb_image;$(ProjectDir)thirdparty\glm-0.9.4.0;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ProjectDir)thirdparty\glew-1.9.0\lib;$(ProjectDir)thirdparty\glfw-2.7.7\lib-msvc100;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)thirdparty\glew-1.10.0\include;$(ProjectDir)thirdparty\glfw-3.0.4.bin.WIN32\include;$(ProjectDir)\thirdparty\stb_image;$(ProjectDir)thirdparty\glm-0.9.5.1;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)thirdparty\glew-1.10.0\lib\Release\Win32;$(ProjectDir)thirdparty\glfw-3.0.4.bin.WIN32\lib-msvc120;$(LibraryPath)</LibraryPath>
+    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(ProjectDir)thirdparty\glew-1.9.0\include;$(ProjectDir)thirdparty\glfw-2.7.7\include;$(ProjectDir)thirdparty\glm-0.9.4.0;$(IncludePath)</IncludePath>

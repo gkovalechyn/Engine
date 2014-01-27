@@ -8,6 +8,6 @@ RenderManager::RenderManager() {
 RenderManager::~RenderManager() {
 }
 
-Camera RenderManager::getCamera(){
+Camera* RenderManager::getCamera(){
 	return this->camera;
 }
