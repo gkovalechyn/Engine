@@ -13,7 +13,7 @@
 
 class Window {
 public:
-    Window(const GLuint id);
+    Window(const GLuint id, const GLFWwindow* handle);
 
 	void setSize(glm::vec2 size);
 	
@@ -21,14 +21,19 @@ public:
 
 	void setPosition(glm::vec2 position);
 
-	void show();
 	/**
 	Clickable objects will be rendered, there is no need for adding them to the renderable
 	entities using the addRenderableEntity function;
 	*/
 	void addClickableObject(ClickableObject* obj);
-
+	/**
+	These RenderableEntities are supposed to be the background of the menus and other astetic
+	parts of the display.
+	*/
 	void addRenderableEntity(RenderableEntity* ent);
+
+	GLuint getId();
+
     ~Window();
 
 private:
@@ -37,8 +42,6 @@ private:
 	std::vector<ClickableObject*> clickables;
 
 	glm::vec2 windowSize = glm::vec2(800,600);
-
-	Program *shaders = NULL;
 
 	const GLuint id;
 };

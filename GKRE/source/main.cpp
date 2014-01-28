@@ -177,6 +177,7 @@ void appMain() {
 	
 	//width, height, title, monitor, resource sharing
 	handle = glfwCreateWindow((int)SCREEN_SIZE.x, (int)SCREEN_SIZE.y, "Test window", NULL, NULL);
+
 	if (handle == NULL) {
 		throw std::runtime_error("glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
 	}
