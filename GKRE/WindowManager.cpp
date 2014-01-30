@@ -6,6 +6,13 @@ WindowManager::WindowManager() {
 
 
 WindowManager::~WindowManager() {
+	//@TODO Log("Closing all windows");
+	std::map<GLuint, Window*>::iterator it = this->windows.begin();
+	while (it != windows.end()){
+		assert(it->second != NULL);
+		delete it->second;
+		it++;
+	}
 }
 
 GLuint WindowManager::getNextWindowID() {
@@ -15,11 +22,13 @@ GLuint WindowManager::getNextWindowID() {
 GLuint WindowManager::createWindow(WindowData& data) {
     try {
         GLFWwindow* handle = NULL;
+		std::map<int, int>::iterator it = data.extraFlags.begin();
+
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
         glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-        //--Set the bits
+        //Set the bits
         glfwWindowHint(GLFW_RED_BITS, data.redBits);
         glfwWindowHint(GLFW_GREEN_BITS, data.greenBits);
         glfwWindowHint(GLFW_BLUE_BITS, data.blueBits);
@@ -27,6 +36,12 @@ GLuint WindowManager::createWindow(WindowData& data) {
         glfwWindowHint(GLFW_ALPHA_BITS, data.alphaBits);
 
         glfwWindowHint(GLFW_DEPTH_BITS, data.depthBits);
+
+		//Extra flags
+		while (it != data.extraFlags.end()){
+			glfwWindowHint(it->first, it->second);
+			it++;
+		}
 
         //width, height, title, monitor, resource sharing
         handle = glfwCreateWindow((int)data.windowSize.x, (int)data.windowSize.y, data.windowTitle.c_str(), data.monitor, data.share);
@@ -43,7 +58,7 @@ GLuint WindowManager::createWindow(WindowData& data) {
 
             return id;
         } else {
-            throw std::runtime_error("Could not create window " + data.windowTitle);
+            throw std::runtime_error("Could not create window \"" + data.windowTitle + "\"");
         }
     } catch (std::runtime_error& error) {
         //@TODO LOGGING

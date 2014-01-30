@@ -15,6 +15,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ClickableObject.cpp" />
+    <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Model2D.cpp" />
     <ClCompile Include="Program.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ClickableObject.h" />
+    <ClInclude Include="KeyManager.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Model2D.h" />
     <ClInclude Include="Program.h" />

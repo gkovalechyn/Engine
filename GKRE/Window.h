@@ -13,7 +13,7 @@
 
 class Window {
 public:
-    Window(const GLuint id, const GLFWwindow* handle);
+    Window(const GLuint id, GLFWwindow* handle);
 
 	void setSize(glm::vec2 size);
 	
@@ -34,10 +34,16 @@ public:
 
 	GLuint getId();
 
+	void render();
+
+	void checkEvents();
+
+	void onMouseEnter();
+
     ~Window();
 
 private:
-	const GLFWwindow* handle;
+	GLFWwindow* handle;
 	std::vector<RenderableEntity*> toBeDrawn;
 	std::vector<ClickableObject*> clickables;
 

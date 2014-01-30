@@ -62,6 +62,7 @@
     <ClCompile Include="Model2D.cpp">
       <Filter>source\Render</Filter>
     </ClCompile>
+    <ClCompile Include="KeyManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitmap.h">
@@ -104,6 +105,7 @@
     <ClInclude Include="Model2D.h">
       <Filter>source\Render</Filter>
     </ClInclude>
+    <ClInclude Include="KeyManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GKRE.rc" />

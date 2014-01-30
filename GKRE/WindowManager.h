@@ -31,6 +31,8 @@ public:
 		GLFWwindow* share = NULL;
 
 		bool focus = true;
+
+		std::map<int, int> extraFlags;
 	};
 
     WindowManager();
@@ -41,6 +43,8 @@ public:
 	@return The window ID. (-1 if an error occurs)
 
 	@throws std::runtime_error if an error occured while trying to create an window.
+
+	@TODO Each window must have its own thread.
 	*/
 	GLuint createWindow(WindowData& data);
 

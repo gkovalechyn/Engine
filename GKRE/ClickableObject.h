@@ -4,7 +4,7 @@
 //--Project includes
 #include "RenderableEntity.h"
 
-class ClickableObject : RenderableEntity{
+class ClickableObject : public RenderableEntity{
 public:
 	ClickableObject();
     ~ClickableObject();
@@ -24,6 +24,10 @@ public:
 	This function is called when the mouse hovers over this object.
 	*/
 	virtual void onHover() = 0;
+
+	bool isEnabled();
+
+	void setEnabled();
 private:
 	//the size and position of this object on the screen
 	glm::vec2 size;
@@ -32,5 +36,6 @@ private:
 protected:
 	std::string name;
 	std::string tooltip;
+	bool enabled = true;
 };
 
